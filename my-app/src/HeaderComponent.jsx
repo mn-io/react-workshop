@@ -2,6 +2,7 @@ import React from 'react';
 
 export default class HeaderComponent extends React.Component {
   render() {
-    return 'Hello :)'
+    const name = this.props.name
+    return `Hello ${name} :)`
   }
 }
