@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import HeaderComponent from './HeaderComponent';
+import GreetingComponent from './GreetingComponent';
 import { FormComponent } from './FormComponent';
 
 class App extends React.Component {
@@ -24,7 +24,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <HeaderComponent name={this.state.greeting}></HeaderComponent>
+          <GreetingComponent name={this.state.greeting}></GreetingComponent>
           <FormComponent handleOnKeyUp={this.handler}></FormComponent>
         </header>
       </div >
