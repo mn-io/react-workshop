@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import HeaderComponent from './HeaderComponent';
+import { FormComponent } from './FormComponent';
 
 class App extends React.Component {
 
@@ -11,7 +12,7 @@ class App extends React.Component {
     }
   }
 
-  handleOnKeyUp = (event) => {
+  handler = (event) => {
     const greeting = event.target.value
     const newState = { greeting }
     console.log(newState)
@@ -24,12 +25,7 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <HeaderComponent name={this.state.greeting}></HeaderComponent>
-          <input type='text'
-            style={{ height: '1rem', marginTop: '1rem' }}
-            onKeyUp={
-              this.handleOnKeyUp
-            }>
-          </input>
+          <FormComponent handleOnKeyUp={this.handler}></FormComponent>
         </header>
       </div >
     );
