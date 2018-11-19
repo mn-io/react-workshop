@@ -4,16 +4,26 @@ import HeaderComponent from './HeaderComponent';
 
 class App extends React.Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      greeting: 'world'
+    }
+  }
+
   handleOnKeyUp = (event) => {
-    const val = event.target.value
-    console.log({ val })
+    const greeting = event.target.value
+    const newState = { greeting }
+    console.log(newState)
+    this.setState(newState)
   }
 
   render() {
+    console.log('render');
     return (
       <div className="App">
         <header className="App-header">
-          <HeaderComponent name='World'></HeaderComponent>
+          <HeaderComponent name={this.state.greeting}></HeaderComponent>
           <input type='text'
             style={{ height: '1rem', marginTop: '1rem' }}
             onKeyUp={
